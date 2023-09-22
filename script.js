@@ -1,16 +1,26 @@
 let arr = ['rock', 'paper', 'scissors']
 
-function getComputerChoice() {
-    return (arr[Math.floor(Math.random() * arr.length)]);
-}
+// function getComputerChoice() {
+//     return (arr[Math.floor(Math.random() * arr.length)]);
+// }
+
+// using arrow notation instead, takes in 0 arguments hence ()
+
+let getComputerChoice = () => (arr[Math.floor(Math.random() * arr.length)]);
+
 
 // const computerSelection = getComputerChoice();
 
 // console.log(computerSelection);
 
-function yourChoice() {
-     return prompt('Pick rock, paper or scissors?').toLowerCase();
-}
+// function yourChoice() {
+//      return prompt('Pick rock, paper or scissors?').toLowerCase();
+// }
+
+// Using arrow notation instead 
+
+yourChoice = () => prompt('Pick rock, paper or scissors?').toLowerCase();
+
 
 // const playerSelection = yourChoice();
 
@@ -46,7 +56,6 @@ let playerScore = 0;
     }
 
 // playRound(computerSelection, playerSelection);
-// playRound(computerSelection, playerSelection); 
 
 // if you run just roundOne() with no arguments you get draw always as computerSelection and 
 // player selection are undefined so computerSelection === playerSelection is always true as 
