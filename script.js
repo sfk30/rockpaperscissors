@@ -4,7 +4,7 @@ function getComputerChoice() {
     return (arr[Math.floor(Math.random() * arr.length)]);
 }
 
-let computerSelection = getComputerChoice();
+// const computerSelection = getComputerChoice();
 
 // console.log(computerSelection);
 
@@ -12,7 +12,7 @@ function yourChoice() {
      return prompt('Pick rock, paper or scissors?').toLowerCase();
 }
 
-let playerSelection = yourChoice();
+// const playerSelection = yourChoice();
 
 // console.log(playerSelection);
 
@@ -55,14 +55,16 @@ let playerScore = 0;
 
 function game() {
     for (i = 1; i <= 5; i ++) {
-        let computerSelection = getComputerChoice();
-        let playerSelection = yourChoice();
+        const computerSelection = getComputerChoice();
+        const playerSelection = yourChoice();
         playRound(computerSelection, playerSelection)
     }   
     if (playerScore > computerScore) {
-        console.log(`player score = ${playerScore}, computer score = ${computerScore}, Player wins!`)
+        console.log(`Player score = ${playerScore},\nComputer score = ${computerScore},\nPlayer wins!`)
+    }   else if (playerScore < computerScore) {
+        console.log(`Player score = ${playerScore},\nComputer score = ${computerScore},\nComputer wins!`)
     }   else {
-        console.log(`player score = ${playerScore}, computer score = ${computerScore}, Computer wins!`)
+        console.log(`Player score = ${playerScore},\nComputer score = ${computerScore},\nIt's a tie!`)
     }
 }
 
