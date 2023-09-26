@@ -69,11 +69,11 @@ function game() {
         playRound(computerSelection, playerSelection)
     }   
     if (playerScore > computerScore) {
-        console.log(`Player score = ${playerScore},\nComputer score = ${computerScore},\nPlayer wins!`)
+        alert(`Player score = ${playerScore},\nComputer score = ${computerScore},\nPlayer wins!`)
     }   else if (playerScore < computerScore) {
-        console.log(`Player score = ${playerScore},\nComputer score = ${computerScore},\nComputer wins!`)
+        alert(`Player score = ${playerScore},\nComputer score = ${computerScore},\nComputer wins!`)
     }   else {
-        console.log(`Player score = ${playerScore},\nComputer score = ${computerScore},\nIt's a tie!`)
+        alert(`Player score = ${playerScore},\nComputer score = ${computerScore},\nIt's a tie!`)
     }
 }
 
