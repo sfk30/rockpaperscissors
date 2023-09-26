@@ -6,7 +6,7 @@ let arr = ['rock', 'paper', 'scissors']
 
 // using arrow notation instead, takes in 0 arguments hence ()
 
-let getComputerChoice = () => (arr[Math.floor(Math.random() * arr.length)]);
+// let getComputerChoice = () => (arr[Math.floor(Math.random() * arr.length)]);
 
 
 // const computerSelection = getComputerChoice();
@@ -19,7 +19,7 @@ let getComputerChoice = () => (arr[Math.floor(Math.random() * arr.length)]);
 
 // Using arrow notation instead 
 
-yourChoice = () => prompt('Pick rock, paper or scissors?').toLowerCase();
+// yourChoice = () => prompt('Pick rock, paper or scissors?').toLowerCase();
 
 
 // const playerSelection = yourChoice();
@@ -63,11 +63,11 @@ let playerScore = 0;
 
 
 function game() {
-    for (i = 1; i <= 5; i ++) {
+    // for (i = 1; i <= 5; i ++) {}
         const computerSelection = getComputerChoice();
         const playerSelection = yourChoice();
         playRound(computerSelection, playerSelection)
-    }   
+ 
     if (playerScore > computerScore) {
         alert(`Player score = ${playerScore},\nComputer score = ${computerScore},\nPlayer wins!`)
     }   else if (playerScore < computerScore) {
@@ -77,7 +77,7 @@ function game() {
     }
 }
 
-game();
+// game();
 
 
 
@@ -86,3 +86,14 @@ game();
 // }   else {
 //     console.log('You lose!')
 // }
+
+const buttons = document.querySelectorAll('button')
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playerSelection = button.className
+        let getComputerChoice = () => (arr[Math.floor(Math.random() * arr.length)]);
+        const computerSelection = getComputerChoice();
+        console.log(`Computer chose ${computerSelection} and you chose ${playerSelection}`)
+        playRound(computerSelection, playerSelection)
+    })
+})
