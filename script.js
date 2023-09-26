@@ -93,7 +93,28 @@ buttons.forEach((button) => {
         playerSelection = button.className
         let getComputerChoice = () => (arr[Math.floor(Math.random() * arr.length)]);
         const computerSelection = getComputerChoice();
-        console.log(`Computer chose ${computerSelection} and you chose ${playerSelection}`)
+        results.textContent = `Computer chose ${computerSelection} and you chose ${playerSelection}`
         playRound(computerSelection, playerSelection)
+        counters.textContent = `Computer score : ${computerScore}, player score : ${playerScore}`
+        if (computerScore == 5) {
+            endResult.textContent = 'Computer wins!'
+        }   else if (playerScore == 5) {
+            endResult.textContent = 'You win!'
+        }   else {
+            return;
+        }
     })
 })
+
+const container = document.querySelector('#container')
+const results = document.createElement('div')
+results.setAttribute('style', 'color: black; background: pink; margin-top: 20px;')
+container.appendChild(results);
+
+const counters = document.createElement('div')
+counters.setAttribute('style', 'color: white; background: black; margin-top: 20px')
+container.appendChild(counters)
+
+const endResult = document.createElement('div')
+endResult.setAttribute('style', 'color: white; background: blue; margin-top: 20px')
+container.appendChild(endResult)
